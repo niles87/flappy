@@ -8,7 +8,7 @@
   border: 2px solid black;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 680px) {
   #canvas1 {
     width: 100vw;
     height: 100vh;

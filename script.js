@@ -73,6 +73,7 @@ window.addEventListener("keyup", function (e) {
 });
 
 window.addEventListener("touchstart", function (e) {
+  e.preventDefault();
   spacePressed = true;
 });
 window.addEventListener("touchend", function (e) {
