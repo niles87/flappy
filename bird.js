@@ -43,13 +43,11 @@ class Bird {
       this.height * this.frameY,
       this.width,
       this.height,
-      this.x,
-      this.y,
-      this.width,
-      this.height
+      this.x - 7,
+      this.y - 5,
+      this.width * 1.25,
+      this.height * 1.25
     );
-    // ctx.fillStyle = "red";
-    // ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 
   flap() {
@@ -57,10 +55,10 @@ class Bird {
   }
 
   handlePlayerFrame() {
-    if (this.frameX < 10) {
-      this.frameX++;
-    } else {
+    if (this.frameX >= 10) {
       this.frameX = 0;
+    } else if (frame % 2 === 0) {
+      this.frameX++;
     }
   }
 }
