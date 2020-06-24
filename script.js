@@ -1,7 +1,12 @@
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
-canvas.width = 600;
-canvas.height = 400;
+canvas.width = canvas.clientWidth;
+canvas.height = canvas.clientHeight;
+
+const newCanvasWidth = canvas.clientWidth;
+const newCanvasHeight = canvas.clientHeight;
+
+console.log(newCanvasHeight, newCanvasWidth);
 
 let spacePressed = false;
 let angle = 0;
@@ -67,6 +72,12 @@ window.addEventListener("keyup", function (e) {
   if (e.code === "Space") spacePressed = false;
 });
 
+window.addEventListener("touchstart", function (e) {
+  spacePressed = true;
+});
+window.addEventListener("touchend", function (e) {
+  spacePressed = false;
+});
 // const bang = new Image();
 // bang.src = 'bang.png'
 
