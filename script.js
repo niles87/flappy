@@ -34,10 +34,10 @@ const BG = {
 };
 
 function handleBackground() {
-  if (BG.x1 <= -BG.width + gameSpeed) BG.x1 = BG.width;
-  else BG.x1 -= gameSpeed;
-  if (BG.x2 <= -BG.width + gameSpeed) BG.x2 = BG.width;
-  else BG.x2 -= gameSpeed;
+  if (BG.x1 <= -BG.width + (gameSpeed + 1)) BG.x1 = BG.width;
+  else BG.x1 -= gameSpeed + 1;
+  if (BG.x2 <= -BG.width + (gameSpeed + 1)) BG.x2 = BG.width;
+  else BG.x2 -= gameSpeed + 1;
   ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height);
   ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height);
 }
