@@ -1,5 +1,5 @@
 const playerSprite = new Image();
-playerSprite.src = "./spritesheet.png";
+playerSprite.src = "./media/spritesheet.png";
 
 function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH) {
   ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH);
@@ -12,8 +12,6 @@ class Bird {
     this.vy = 0;
     this.width = 71;
     this.height = 40;
-    // this.width = 20;
-    // this.height = 20;
     this.weight = 0.9;
     this.frameX = 0;
     this.frameY = 0;
@@ -37,13 +35,15 @@ class Bird {
   }
 
   draw() {
+    // ctx.fillStyle = "red";
+    // ctx.fillRect(this.x, this.y, this.width, this.height);
     drawSprite(
       playerSprite,
       this.width * this.frameX,
       this.height * this.frameY,
       this.width,
       this.height,
-      this.x - 7,
+      this.x - 8,
       this.y - 5,
       this.width * 1.25,
       this.height * 1.25

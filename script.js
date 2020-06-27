@@ -7,6 +7,7 @@ const newCanvasWidth = canvas.clientWidth;
 const newCanvasHeight = canvas.clientHeight;
 
 const restart = document.getElementById("reset");
+// const audio = document.getElementById("music");
 
 let spacePressed = false;
 let angle = 0;
@@ -23,7 +24,7 @@ gradient.addColorStop("0.6", "#000");
 gradient.addColorStop("0.9", "#fff");
 
 const background = new Image();
-background.src = "BG.png";
+background.src = "./media/BG.png";
 
 const BG = {
   x1: 0,
@@ -60,8 +61,16 @@ function animate() {
   frame++;
 }
 
+const audio = new Audio("./media/Loop-Menu.wav");
+audio.loop = true;
+
+function init() {
+  audio.play();
+  animate();
+}
+
 window.addEventListener("load", function () {
-  setTimeout(animate, 3000);
+  setTimeout(init, 2000);
 });
 
 window.addEventListener("keydown", function (e) {
@@ -89,14 +98,15 @@ restart.addEventListener("click", function () {
 function handleCollisions() {
   for (let i = 0; i < obstaclesArray.length; i++) {
     if (
-      bird.x < obstaclesArray[i].x + obstaclesArray[i].width &&
-      bird.x + bird.width > obstaclesArray[i].x &&
+      bird.x < (obstaclesArray[i].x + obstaclesArray[i].width) / 1.2 &&
+      bird.x + bird.width > obstaclesArray[i].x + 5 &&
       ((bird.y < 0 + obstaclesArray[i].top && bird.y + bird.height > 0) ||
         (bird.y + bird.height > canvas.height - obstaclesArray[i].bottom && bird.y < canvas.height))
     ) {
       ctx.font = "25px Georgia";
       ctx.fillStyle = "black";
       ctx.fillText(`Game over, your score is ${score}`, 160, canvas.height / 2);
+      audio.pause();
       return true;
     }
   }
