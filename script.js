@@ -6,7 +6,7 @@ canvas.height = canvas.clientHeight;
 const newCanvasWidth = canvas.clientWidth;
 const newCanvasHeight = canvas.clientHeight;
 
-console.log(newCanvasHeight, newCanvasWidth);
+const restart = document.getElementById("reset");
 
 let spacePressed = false;
 let angle = 0;
@@ -78,6 +78,10 @@ window.addEventListener("touchstart", function (e) {
 });
 window.addEventListener("touchend", function (e) {
   spacePressed = false;
+});
+
+restart.addEventListener("click", function () {
+  window.location.reload();
 });
 // const bang = new Image();
 // bang.src = 'bang.png'

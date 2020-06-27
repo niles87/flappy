@@ -8,6 +8,18 @@
   border: 2px solid black;
 }
 
+#reset {
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  z-index: 5;
+  background-color: #b90e0e;
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 @media screen and (max-width: 680px) {
   #canvas1 {
     width: 100vw;
