@@ -35,9 +35,9 @@ const BG = {
 
 function handleBackground() {
   if (BG.x1 <= -BG.width + (gameSpeed + 1)) BG.x1 = BG.width;
-  else BG.x1 -= gameSpeed + 1;
+  else BG.x1 -= gameSpeed - 1;
   if (BG.x2 <= -BG.width + (gameSpeed + 1)) BG.x2 = BG.width;
-  else BG.x2 -= gameSpeed + 1;
+  else BG.x2 -= gameSpeed - 1;
   ctx.drawImage(background, BG.x1, BG.y, BG.width, BG.height);
   ctx.drawImage(background, BG.x2, BG.y, BG.width, BG.height);
 }
@@ -92,7 +92,7 @@ function handleCollisions() {
       bird.x < obstaclesArray[i].x + obstaclesArray[i].width &&
       bird.x + bird.width > obstaclesArray[i].x &&
       ((bird.y < 0 + obstaclesArray[i].top && bird.y + bird.height > 0) ||
-        (bird.y > canvas.height - obstaclesArray[i].bottom && bird.y + bird.height < canvas.height))
+        (bird.y + bird.height > canvas.height - obstaclesArray[i].bottom && bird.y < canvas.height))
     ) {
       ctx.font = "25px Georgia";
       ctx.fillStyle = "black";
