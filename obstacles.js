@@ -16,7 +16,7 @@ class Obstacle {
     this.x = canvas.width;
     this.originalWidth = 144;
     this.originalHeight = 324;
-    this.width = this.originalWidth / 7;
+    this.width = this.originalWidth / 4;
     this.counted = false;
   }
 
