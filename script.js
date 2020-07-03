@@ -7,7 +7,6 @@ const newCanvasWidth = canvas.clientWidth;
 const newCanvasHeight = canvas.clientHeight;
 
 const restart = document.getElementById("reset");
-// const audio = document.getElementById("music");
 
 let spacePressed = false;
 let angle = 0;
@@ -92,14 +91,12 @@ window.addEventListener("touchend", function (e) {
 restart.addEventListener("click", function () {
   window.location.reload();
 });
-// const bang = new Image();
-// bang.src = 'bang.png'
 
 function handleCollisions() {
   for (let i = 0; i < obstaclesArray.length; i++) {
     if (
-      bird.x < (obstaclesArray[i].x + obstaclesArray[i].width) / 1.2 &&
-      bird.x + bird.width > obstaclesArray[i].x + 5 &&
+      bird.x < obstaclesArray[i].x + obstaclesArray[i].width &&
+      bird.x + bird.width - 20 > obstaclesArray[i].x &&
       ((bird.y < 0 + obstaclesArray[i].top && bird.y + bird.height > 0) ||
         (bird.y + bird.height > canvas.height - obstaclesArray[i].bottom && bird.y < canvas.height))
     ) {

@@ -21,9 +21,6 @@ class Obstacle {
   }
 
   draw() {
-    // ctx.fillStyle = "red";
-    // ctx.fillRect(this.x, 0, this.width, this.top);
-    // ctx.fillRect(this.x, canvas.height - this.bottom, this.width, this.bottom);
     drawObstacle(
       topRock,
       0,
@@ -31,7 +28,6 @@ class Obstacle {
       this.originalWidth,
       this.originalHeight,
       this.x,
-      // this.top,
       0,
       this.width,
       this.top
